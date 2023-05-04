@@ -43,8 +43,7 @@ class ChatGPT(object):
                 "Source_type": "SP_FAQ",
                 "date": f"{datetime.datetime.now().year}-{datetime.datetime.now().month}-{datetime.datetime.now().day}"
             }
-        except Exception as e:
-            print(e)
+        except:
             return {
-                "error": "true"
+                "Answer_original": "Error"
             }
