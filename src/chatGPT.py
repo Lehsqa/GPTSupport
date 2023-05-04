@@ -1,5 +1,6 @@
 import openai, datetime
-openai.api_key = "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"
+from src.config import BaseConfig
+openai.api_key = BaseConfig.API_KEY
 
 
 class ChatGPT(object):
@@ -42,7 +43,8 @@ class ChatGPT(object):
                 "Source_type": "SP_FAQ",
                 "date": f"{datetime.datetime.now().year}-{datetime.datetime.now().month}-{datetime.datetime.now().day}"
             }
-        except:
+        except Exception as e:
+            print(e)
             return {
                 "error": "true"
             }
